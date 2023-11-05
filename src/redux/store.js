@@ -1,8 +1,3 @@
-// import { createStore } from 'redux';
-// import { devToolsEnhancer } from '@redux-devtools/extension';
-// import { rootReducer } from './reducer';
-// const enhancer = devToolsEnhancer();
-// export const store = createStore(rootReducer, enhancer);
 import { configureStore } from '@reduxjs/toolkit';
 import { contactsReducer } from './contacts/contactsSlise';
 import { filtersReducer } from './contacts/filtersSlise';
@@ -16,9 +11,6 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-
-// import storage from 'redux-persist/lib/storage'
-
 
 export const store = configureStore({
   reducer: {

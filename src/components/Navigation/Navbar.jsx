@@ -1,24 +1,16 @@
-
-import {
-  NavItem,
-  NavLinkStyled,
-  NavList,
-  NavbarContainer,
-} from './Navbar.styled.js';
+import { NavLink } from 'react-router-dom';
 
 export const Navbar = () => {
   return (
-    <NavbarContainer>
+    <header>
       <div>
-        <NavLinkStyled to="/">
-          Phonebook
-        </NavLinkStyled>
+        <NavLink to="/">Phonebook</NavLink>
       </div>
-      <NavList>
-        <NavItem>
-          <NavLinkStyled to="/contacts">Contacts</NavLinkStyled>
-        </NavItem>
-      </NavList>
-    </NavbarContainer>
+      <ul>
+        <li>
+          <NavLink to="/contacts">Contacts</NavLink>
+        </li>
+      </ul>
+    </header>
   );
 };

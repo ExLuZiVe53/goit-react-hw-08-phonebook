@@ -1,10 +1,9 @@
-import { Outlet } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { AppBar } from './Navigation/AppBar';
 import { Suspense } from 'react';
+import { Outlet } from 'react-router-dom';
 
-export  const Layout = () => {
- 
+export const Layout = () => {
   return (
     <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 16px' }}>
       <AppBar />

@@ -1,14 +1,14 @@
-import { NavItem, NavLinkStyled, NavList } from './Navbar.styled.js';
+import { NavLink } from 'react-router-dom';
 
 export const Authbar = () => {
   return (
-    <NavList>
-      <NavItem>
-        <NavLinkStyled to="/register">Register</NavLinkStyled>
-      </NavItem>
-      <NavItem>
-        <NavLinkStyled to="/login">Log In</NavLinkStyled>
-      </NavItem>
-    </NavList>
+    <ul>
+      <li>
+        <NavLink to="/register">Register</NavLink>
+      </li>
+      <li>
+        <NavLink to="/login">Log In</NavLink>
+      </li>
+    </ul>
   );
 };

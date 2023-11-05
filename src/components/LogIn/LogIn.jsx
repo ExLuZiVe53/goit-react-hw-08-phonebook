@@ -1,36 +1,25 @@
-import { Formik, ErrorMessage } from 'formik';
+import { Formik, ErrorMessage, Form, Field } from 'formik';
 import { useDispatch } from 'react-redux';
 import * as yup from 'yup';
-import {
-  Field,
-  Label,
-  ButtonAddContacts,
-  Form,
-  Title
-} from './LogIn.styled.js';
+
 import * as authOperation from 'redux/auth/auth-operation';
-//початкові значення форміка
+
 const initialValues = { email: '', password: '' };
-//схема валідації
+
 const schema = yup.object().shape({
   email: yup.string().required().min(4),
   password: yup.string().required().min(4),
 });
 export const LogIn = () => {
-  //виклик диспечера
   const dispatch = useDispatch();
-  //отримання даних з редакс
 
-  //додавання контакту при сабміті
   const handleSabmit = (values, { resetForm }) => {
- 
-    // виклик диспечера для відправки даних в редакс
- console.log('valuesLOG', values);
-// const log = JSON.stringify({
-//   name: values.name.trim(),
-//   email: values.email.trim(),
-// });
-// console.log('loglog', log);
+    console.log('valuesLOG', values);
+    // const log = JSON.stringify({
+    //   name: values.name.trim(),
+    //   email: values.email.trim(),
+    // });
+    // console.log('loglog', log);
     dispatch(
       authOperation.logIn({
         email: values.email.trim(),
@@ -41,7 +30,6 @@ export const LogIn = () => {
     resetForm();
   };
 
-  
   return (
     <Formik
       initialValues={initialValues}
@@ -49,17 +37,17 @@ export const LogIn = () => {
       onSubmit={handleSabmit}
     >
       <Form>
-        <Title>LogIn</Title>
+        <h3>LogIn</h3>
 
-        <Label htmlFor="email">E-mail</Label>
-        <Field name="email"  />
+        <label htmlFor="email">E-mail</label>
+        <Field name="email" />
         <ErrorMessage name="email" component="div" />
 
-        <Label htmlFor="password">password</Label>
-        <Field name="password"  />
+        <label htmlFor="password">password</label>
+        <Field name="password" />
         <ErrorMessage name="password" component="div" />
 
-        <ButtonAddContacts type="submit">Enter</ButtonAddContacts>
+        <button type="submit">Enter</button>
       </Form>
     </Formik>
   );
