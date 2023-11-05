@@ -57,10 +57,13 @@ const authSlise = createSlice({
       .addCase(register.pending, handlePending)
       .addCase(register.fulfilled, handleFulfilledRegister)
       .addCase(register.rejected, handleRejected)
+
       .addCase(logIn.pending, handlePending)
       .addCase(logIn.fulfilled, handleFulfilledLogIn)
       .addCase(logIn.rejected, handleRejected)
+
       .addCase(logOut.fulfilled, handleFulfilledlogOut)
+
       .addCase(refreshUser.pending, handlePendingRefreshUser)
       .addCase(refreshUser.fulfilled, handleFulfilledrefreshUser)
       .addCase(refreshUser.rejected, handleRejectedRefreshUser),

@@ -40,9 +40,11 @@ const contactsSlise = createSlice({
       .addCase(fetchContacts.pending, handlePending)
       .addCase(fetchContacts.fulfilled, handleFulfilled)
       .addCase(fetchContacts.rejected, handleRejected)
+
       .addCase(addContact.pending, handlePending)
       .addCase(addContact.fulfilled, handleAddContactFulfilled)
       .addCase(addContact.rejected, handleRejected)
+
       .addCase(removeContact.fulfilled, handleRemoveFulfilled)
       .addCase(removeContact.pending, handlePending)
       .addCase(removeContact.rejected, handleRejected),
