@@ -12,12 +12,12 @@ export const RegisterUserForm = () => {
   const handleSabmit = (values, { resetForm }) => {
     console.log('values', values);
 
-    const reg = JSON.stringify({
+    const register = JSON.stringify({
       name: values.name.trim(),
       email: values.email.trim(),
       password: values.password.trim(),
     });
-    console.log('reg', reg);
+    console.log('register', register);
 
     dispatch(
       authOperation.register({
@@ -55,7 +55,7 @@ export const RegisterUserForm = () => {
         <label htmlFor="password">Password</label>
         <Field name="password" type="password" />
         <ErrorMessage name="password" component="div" />
-        <button type="submit">sign in</button>
+        <button type="submit">Sign in</button>
       </Form>
     </Formik>
   );
