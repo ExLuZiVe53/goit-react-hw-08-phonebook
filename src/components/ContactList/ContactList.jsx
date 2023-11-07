@@ -5,6 +5,8 @@ import { getContacts } from 'redux/contacts/selectors.js';
 
 import { useEffect } from 'react';
 
+import css from './ContactList.module.css';
+
 export const ContactList = () => {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -32,11 +34,15 @@ export const ContactList = () => {
   };
 
   return (
-    <ul>
+    <ul className={css.ContactUl}>
       {visibleFilter.map(contact => (
-        <li key={contact.id}>
-          {contact.name}: {contact.number}{' '}
-          <button onClick={() => handleDelete(contact.id, contact.name)}>
+        <li className={css.ContactItem} key={contact.id}>
+          <span className={css.ContactName}>{contact.name}:</span>
+          <span className={css.ContactNumber}>{contact.number}</span>{' '}
+          <button
+            className={css.delete}
+            onClick={() => handleDelete(contact.id, contact.name)}
+          >
             Delete
           </button>
         </li>

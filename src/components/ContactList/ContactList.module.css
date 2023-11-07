@@ -21,12 +21,13 @@
   align-items: center;
 }
 
-.TelSpan {
+/* .TelSpan {
+  font-weight: 700;
 }
 
 .NameSpan {
   font-weight: 700;
-}
+} */
 
 .ContactUl {
   list-style: none;

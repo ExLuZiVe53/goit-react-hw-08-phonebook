@@ -9,6 +9,8 @@ import * as yup from 'yup';
 import { getContacts } from 'redux/contacts/selectors.js';
 import toast from 'react-hot-toast';
 
+import css from './ContactForm.module.css';
+
 const initialValues = { name: '', number: '' };
 
 export const ContactForm = () => {
@@ -48,16 +50,22 @@ export const ContactForm = () => {
       validationSchema={schema}
       onSubmit={handleSabmit}
     >
-      <Form>
-        <label htmlFor="name">Name</label>
-        <Field name="name" type="name" />
+      <Form className={css.FormWrapper}>
+        <label className={css.FormLabel} htmlFor="name">
+          Name
+        </label>
+        <Field className={css.FormInput} name="name" type="name" />
         <ErrorMessage name="name" component="div" />
 
-        <label htmlFor="number">Number</label>
-        <Field name="number" type="tel" />
+        <label className={css.FormLabel} htmlFor="number">
+          Number
+        </label>
+        <Field className={css.FormInput} name="number" type="tel" />
         <ErrorMessage name="number" component="div" />
 
-        <button type="submit">add contacts</button>
+        <button className={css.ButtonForm} type="submit">
+          add contacts
+        </button>
       </Form>
     </Formik>
   );
