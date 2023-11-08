@@ -4,6 +4,8 @@ import * as yup from 'yup';
 
 import * as authOperation from 'redux/auth/auth-operation';
 
+import css from './RegisterUserForm.module.css';
+
 const initialValues = { name: '', email: '', password: '' };
 
 export const RegisterUserForm = () => {
@@ -45,17 +47,34 @@ export const RegisterUserForm = () => {
       <Form>
         <h3>Registaration</h3>
         <label htmlFor="email">E-mail</label>
-        <Field name="email" type="email" />
+        <Field
+          name="email"
+          type="email"
+          className={css.FormInput}
+          placeholder="Enter E-mail"
+        />
         <ErrorMessage name="email" component="div" />
 
         <label htmlFor="name">Name</label>
-        <Field name="name" type="name" />
+        <Field
+          name="name"
+          type="name"
+          className={css.FormInput}
+          placeholder="Enter name"
+        />
         <ErrorMessage name="name" component="div" />
 
         <label htmlFor="password">Password</label>
-        <Field name="password" type="password" />
+        <Field
+          name="password"
+          type="password"
+          className={css.FormInput}
+          placeholder="Enter password"
+        />
         <ErrorMessage name="password" component="div" />
-        <button type="submit">Sign in</button>
+        <button type="submit" className={css.SignIn}>
+          Sign in
+        </button>
       </Form>
     </Formik>
   );

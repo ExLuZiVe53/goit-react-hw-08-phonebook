@@ -4,6 +4,8 @@ import * as yup from 'yup';
 
 import * as authOperation from 'redux/auth/auth-operation';
 
+import css from './Login.module.css';
+
 const initialValues = { email: '', password: '' };
 
 const schema = yup.object().shape({
@@ -40,14 +42,24 @@ export const LogIn = () => {
         <h3>LogIn</h3>
 
         <label htmlFor="email">E-mail</label>
-        <Field name="email" />
+        <Field
+          name="email"
+          className={css.FormInput}
+          placeholder="Enter e-mail"
+        />
         <ErrorMessage name="email" component="div" />
 
-        <label htmlFor="password">password</label>
-        <Field name="password" />
+        <label htmlFor="password">Password</label>
+        <Field
+          name="password"
+          className={css.FormInput}
+          placeholder="Enter password"
+        />
         <ErrorMessage name="password" component="div" />
 
-        <button type="submit">Enter</button>
+        <button className={css.Enter} type="submit">
+          Enter
+        </button>
       </Form>
     </Formik>
   );

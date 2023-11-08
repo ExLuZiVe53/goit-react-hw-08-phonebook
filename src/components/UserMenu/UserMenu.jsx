@@ -3,6 +3,8 @@ import authSelectors from '../../redux/auth/auth-selectors.js';
 
 import * as authOperation from 'redux/auth/auth-operation';
 
+import css from './UserMenu.module.css';
+
 export const UserMenu = () => {
   const dispatch = useDispatch();
   const name = useSelector(authSelectors.getUserName);
@@ -10,7 +12,11 @@ export const UserMenu = () => {
   return (
     <header>
       <p>Hello, {name}</p>
-      <button type="submit" onClick={() => dispatch(authOperation.logOut())}>
+      <button
+        type="submit"
+        onClick={() => dispatch(authOperation.logOut())}
+        className={css.LogOut}
+      >
         LogOut
       </button>
     </header>
