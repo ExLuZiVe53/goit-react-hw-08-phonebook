@@ -1,16 +1,13 @@
-import { Radio } from 'react-loader-spinner';
+import { Hourglass } from 'react-loader-spinner';
 
 export const Loader = () => (
-  <Radio
-    height="100"
-    width="100"
-    color="#808080"
-    wrapperStyle={{
-      position: 'absolute',
-      top: '50%',
-      left: 'calc(50% - 50px)',
-    }}
+  <Hourglass
     visible={true}
-    ariaLabel="three-circles-rotating"
+    height="80"
+    width="80"
+    ariaLabel="hourglass-loading"
+    wrapperStyle={{}}
+    wrapperClass=""
+    colors={['#306cce', '#72a1ed']}
   />
 );
