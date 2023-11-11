@@ -10,3 +10,7 @@
     0 0 50px rgb(77 84 85), 0 0 200px rgb(77 84 85);
   color: white;
 }
+
+.LoginName {
+  background-color: orange;
+}

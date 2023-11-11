@@ -11,7 +11,9 @@ export const UserMenu = () => {
 
   return (
     <header>
-      <p>Hello, {name}</p>
+      <p>
+        Welcome, <span className={css.LoginName}>{name}</span> homebook
+      </p>
       <button
         type="submit"
         onClick={() => dispatch(authOperation.logOut())}
